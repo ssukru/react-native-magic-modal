@@ -43,6 +43,7 @@
     "access": "public"
   },
   "scripts": {
+    "prepare": "bunchee",
     "build": "bunchee",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
