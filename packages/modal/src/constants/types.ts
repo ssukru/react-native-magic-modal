@@ -83,6 +83,15 @@ export type ModalProps = {
    * @default 500
    */
   swipeVelocityThreshold: number;
+
+  /**
+   * ID of the modal. If not provided, a random ID will be generated.
+   * If provided, it will be used to identify the modal and prevent it from being shown again.
+   * 
+   * @default undefined
+   * @example "my-modal"
+   */
+  modalID: string | undefined;
 } & Pick<React.ComponentProps<typeof Animated.View>, "entering" | "exiting">;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

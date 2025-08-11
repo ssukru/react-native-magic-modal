@@ -42,6 +42,7 @@ export const showToast = async () => {
     style: {
       justifyContent: "flex-start",
     },
+    modalID: "toast",
   }).promise;
 
   // eslint-disable-next-line no-console
