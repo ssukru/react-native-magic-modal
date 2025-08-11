@@ -95,7 +95,17 @@ export const MagicModalPortal: React.FC = memo(() => {
 
   const show = useCallback<GlobalShowFunction>(
     (newComponent, newConfig) => {
-      const modalID = generatePseudoRandomID();
+      const modalID = newConfig.modalID ?? generatePseudoRandomID();
+
+      if (newConfig.modalID) {
+        // check if modalID is already in use
+        const isModalIDInUse = modals.some((modal) => modal.id === modalID);
+        if (isModalIDInUse) {
+          // eslint-disable-next-line no-console
+          console.warn(`[MODAL ID IN USE] Modal with id: ${modalID} is already in use. Please use a different id.`);
+          return;
+        }
+      }
 
       let hideCallback: (value: unknown) => void = () => {
         // Empty function
